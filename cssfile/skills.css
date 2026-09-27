@@ -1,0 +1,310 @@
+/* Reset basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-display: 'Syne', sans-serif;
+  --font-cursive: 'Playfair Display', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: #ffffff;
+  font-family: var(--font-sans);
+}
+
+/* Background at Wrapper setup para sa Neon Purple Keyboard vibe */
+.portfolio-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 3.5rem;
+}
+/* Navigation Layout: White Pill Buttons */
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.nav-item {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 1.4rem;
+  border-radius: 12px; /* Square-ish pill cuts katulad ng nasa photo */
+  transition: opacity 0.2s ease;
+}
+
+.nav-item:hover {
+  background-color: orange;
+  opacity: 1;
+}
+
+/* Ang kahel/orange na 'Home' button */
+.nav-item.active {
+  background-color:orange;
+  font-weight: 700;
+}
+
+/* Sub-header thin line framework */
+.sub-header-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.meta-text {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.horizontal-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 1);
+  margin: 0 1.5rem;
+}
+
+/* Main Graphic Typography Framework */
+.hero-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  left: 20px;
+}
+
+.main-title-box {
+  position: relative;
+  display: inline-block;
+  left: -450px;
+  z-index: 1;
+}
+
+.skills-images {
+  position: relative;
+  top: -60px;
+  display: grid;
+  grid-template-columns: minmax(0, 2.37fr) minmax(0, 1fr);
+  align-items: center;
+  width: 100%;
+  height: min(750px, max(0px, calc(100vh - 294px)));
+}
+
+.skills-graphic,
+.skills-portrait {
+  display: block;
+  width: 33.333%;
+  height: auto;
+  min-width: 0;
+  justify-self: center;
+  object-fit: contain;
+  transform: scale(3);
+  transform-origin: center;
+}
+
+.skills-portrait {
+  position: relative;
+  left: -100px;
+  z-index: 1;
+  top: -40px;
+}
+
+.skills-graphic {
+  position: relative;
+  left: 200px;
+  transform: scale(4);
+  top: -50px;
+}
+/* Ang higanteng 'Portfolio' text */
+.title-portfolio {
+  font-family: var(--font-display);
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -5px;
+  color: #ffffff;
+  position: relative;
+  top: 60px;
+}
+
+/* Cursive / Script font part ng 'folio' */
+.cursive-text {
+  font-family: var(--font-cursive);
+  font-style: italic;
+  color:yellowgreen;
+  font-weight: 600;
+  letter-spacing: -2px;
+  margin-left: -5px;
+}
+/* Footer layout */
+.hero-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  padding-top: 2rem;
+}
+
+/* Responsive Scaling para sa mobile screens */
+@media (max-width: 1100px) {
+  .title-portfolio { 
+    font-size: 8.5rem; 
+    letter-spacing: -3px; 
+    }
+  .title-online { 
+    font-size: 2.8rem; 
+    }
+  .name-details-row { 
+    max-width: 600px; 
+    }
+}
+
+@media (min-height: 668px) {
+  .main-title-box {
+    top: min(0px, calc(25vh - 232.5px));
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-images {
+    height: min(calc(78.23vw - 36.07px), max(0px, calc(100vh - 250px)));
+  }
+  .portfolio-hero { 
+    padding: 1.5rem; 
+}
+  .nav-links { 
+    flex-wrap: wrap; 
+}
+  .title-portfolio { 
+    font-size: 5rem; letter-spacing: -1px; 
+}
+  .title-online { 
+    font-size: 2rem; 
+    margin-bottom: -0.5rem; 
+}
+  .name-details-row { 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    gap: 0.5rem; 
+}
+  .sub-header-row {
+    display: none; 
+}
+  .hero-footer { 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 0.6rem; 
+}
+  .sparkle { 
+    display: none; 
+} /* Tinatago sa mobile para malinis tingnan */
+}
+
+@media (max-width: 768px) {
+  .portfolio-hero {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: visible;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .navbar,
+  .nav-links {
+    width: 100%;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .nav-item {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-content {
+    flex: 1 0 auto;
+    left: auto;
+    gap: 1rem;
+  }
+
+  .main-title-box {
+    left: auto;
+    max-width: 100%;
+  }
+
+  .title-portfolio {
+    top: auto;
+    font-size: clamp(2.6rem, 12vw, 5rem);
+    letter-spacing: -0.04em;
+    overflow-wrap: anywhere;
+  }
+
+  .skills-images {
+    top: auto;
+    width: 100%;
+    height: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .skills-graphic,
+  .skills-portrait {
+    position: static;
+    width: 100%;
+    max-height: 35svh;
+    transform: none;
+  }
+
+  .hero-footer {
+    padding-top: 0.5rem;
+    font-size: 0.75rem;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 420px) {
+  .skills-images {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .skills-graphic,
+  .skills-portrait {
+    max-height: 30svh;
+  }
+}

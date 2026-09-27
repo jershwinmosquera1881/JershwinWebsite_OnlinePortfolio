@@ -1,0 +1,338 @@
+/* Reset basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+:root {
+  --font-display: 'Syne', sans-serif;
+  --font-cursive: 'Playfair Display', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url('../images/education.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  color: #ffffff;
+  font-family: var(--font-sans);
+}
+
+/* Background at Wrapper setup para sa Neon Purple Keyboard vibe */
+.portfolio-hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 3.5rem;
+}
+/* Navigation Layout: White Pill Buttons */
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 3;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.nav-item {
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 1.4rem;
+  border-radius: 12px; /* Square-ish pill cuts katulad ng nasa photo */
+  transition: opacity 0.2s ease;
+}
+
+.nav-item:hover {
+  background-color: orange;
+  opacity: 1;
+}
+
+/* Ang kahel/orange na 'Home' button */
+.nav-item.active {
+  background-color:orange;
+  font-weight: 700;
+}
+
+/* Sub-header thin line framework */
+.sub-header-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.meta-text {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.horizontal-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 1);
+  margin: 0 1.5rem;
+}
+
+/* Main Graphic Typography Framework */
+.hero-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 220px;
+  top: -90px;
+  width: 100%;
+}
+
+.main-title-box {
+  position: relative;
+  display: inline-block;
+}
+
+/* Ang maliit na 'Online' sa ibabaw */
+.title-online {
+  left: 15px;
+  font-family: var(--font-display);
+  font-size: 3.6rem;
+  font-weight: 800;
+  color:greenyellow;
+  text-transform: capitalize;
+  line-height: 1;
+  margin-bottom: -0.5rem;
+  position: relative;
+  z-index: 2;
+  margin-left: -0.5rem;
+}
+
+/* Ang higanteng 'Portfolio' text */
+.title-portfolio {
+  font-family: var(--font-display);
+  font-size: 10rem;
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -5px;
+  color: #ffffff;
+  position: relative;
+}
+
+/* Cursive / Script font part ng 'folio' */
+.cursive-text {
+  font-family: var(--font-cursive);
+  font-style: italic;
+  color:yellowgreen;
+  font-weight: 600;
+  letter-spacing: -2px;
+  margin-left: -5px;
+}
+
+
+/* Name and Subtitle blocks sa ilalim ng text */
+.name-details-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 780px; /* Pantay sa dulo ng malaking text block */
+  margin-top: 1.5rem;
+}
+
+.left-name {
+  position: relative;
+  top: -5px;
+  left: 8px;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: yellowgreen;
+  letter-spacing: -0.4px;
+}
+.edu-info{
+  font-size: 24px;
+  color: #ffffff;
+}
+.edu-location{
+  font-size: 16px;
+}
+.education-photo {
+  display: block;
+  position: relative;
+  left: -240px;
+  top: 20px;
+  width: 720px;
+  height: min(850px, 85vh);
+  object-fit: contain;
+}
+/* Responsive Scaling para sa mobile screens */
+@media (max-width: 1100px) {
+  .hero-content {
+    left: 80px;
+  }
+  .title-portfolio { 
+    font-size: 8.5rem; 
+    letter-spacing: -3px; 
+    }
+  .title-online { 
+    font-size: 2.8rem; 
+    }
+  .name-details-row { 
+    max-width: 600px; 
+    }
+  .education-photo {
+    width: 440px;
+    height: min(540px, 70vh);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-content {
+    left: 100px;
+  }
+}
+
+@media (max-width: 850px) {
+  .hero-content {
+    left: 120px;
+    gap: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    gap: 1rem;
+    left: 0;
+  }
+  .portfolio-hero { 
+    padding: 1.5rem; 
+}
+  .nav-links { 
+    flex-wrap: wrap; 
+}
+  .title-portfolio { 
+    font-size: 5rem; letter-spacing: -1px; 
+}
+  .title-online { 
+    font-size: 2rem; 
+    margin-bottom: -0.5rem; 
+}
+  .name-details-row { 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    gap: 0.5rem; 
+}
+  .education-photo {
+    left: 0;
+    top: -10px;
+    width: 320px;
+    height: min(380px, 50vh);
+  }
+  .sub-header-row {
+    display: none; 
+}
+  .hero-footer { 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 0.6rem; 
+}
+  .sparkle { 
+    display: none; 
+} /* Tinatago sa mobile para malinis tingnan */
+}
+
+@media (max-width: 768px) {
+  .portfolio-hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .navbar,
+  .nav-links {
+    width: 100%;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .nav-item {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-content {
+    flex: 1 0 auto;
+    flex-direction: column;
+    left: auto;
+    top: auto;
+    gap: 1rem;
+  }
+
+  .main-title-box {
+    max-width: 100%;
+  }
+
+  .title-portfolio {
+    font-size: clamp(2.6rem, 12vw, 5rem);
+    letter-spacing: -0.04em;
+    overflow-wrap: anywhere;
+  }
+
+  .title-online {
+    font-size: clamp(1.5rem, 7vw, 2.5rem);
+  }
+
+  .name-details-row {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .left-name {
+    position: static;
+    font-size: 1rem;
+  }
+
+  .edu-info {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .education-photo {
+    position: static;
+    width: min(100%, 28rem);
+    height: auto;
+    max-height: 50svh;
+  }
+
+  .hero-footer {
+    padding-top: 0.5rem;
+    font-size: 0.75rem;
+    overflow-wrap: anywhere;
+  }
+}
